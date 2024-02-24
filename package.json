@@ -1,0 +1,54 @@
+{
+  "name": "compare-versions-roku",
+  "version": "0.1.0",
+  "description": "Compare semver version strings in BrightScript",
+  "keywords": [
+    "brightscript",
+    "compare",
+    "compare-versions",
+    "kopytko",
+    "kopytko-module",
+    "roku",
+    "semver",
+    "versions"
+  ],
+  "author": "Błażej Chełkowski <blazej.chelkowski@outlook.com>",
+  "files": [
+    "src",
+    "!**/_tests"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .brs src/",
+    "test": "node node_modules/@dazn/kopytko-unit-testing-framework/scripts/test.js"
+  },
+  "dependencies": {
+    "@dazn/kopytko-utils": "^2.6.0"
+  },
+  "devDependencies": {
+    "@dazn/eslint-plugin-kopytko": "^2.1.0",
+    "@dazn/kopytko-unit-testing-framework": "^2.4.1",
+    "eslint": "8.57.0"
+  },
+  "license": "MIT",
+  "kopytkoModuleDir": "src/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bchelkowski/compare-versions-roku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bchelkowski/compare-versions-roku/issues"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
+}
