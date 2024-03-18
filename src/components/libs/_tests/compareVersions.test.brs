@@ -207,5 +207,73 @@ function TestSuite__compareVersions() as Object
     return expect(result).toBe(params[3])
   end function)
 
+  it("should throw an error for integer as version", function (_ts as Object) as String
+    ' When
+    try
+      integerValue = 42
+      compareVersions(integerValue, integerValue)
+    catch error
+      result = error.message
+    end try
+    
+    ' Then
+    return expect(result).toBe(["Type Mismatch. Unable to cast " , "Integer", " to ", "String", "."].join(Chr(34)))
+  end function)
+
+  it("should throw an error for associative array as version", function (_ts as Object) as String
+    ' When
+    try
+      associativeArray = {}
+      compareVersions(associativeArray, associativeArray)
+    catch error
+      result = error.message
+    end try
+    
+    ' Then
+    return expect(result).toBe(["Type Mismatch. Unable to cast " , "roAssociativeArray", " to ", "String", "."].join(Chr(34)))
+  end function)
+
+  it("should throw an error for array as version", function (_ts as Object) as String
+    ' When
+    try
+      array = []
+      compareVersions(array, array)
+    catch error
+      result = error.message
+    end try
+    
+    ' Then
+    return expect(result).toBe(["Type Mismatch. Unable to cast " , "roArray", " to ", "String", "."].join(Chr(34)))
+  end function)
+
+  it("should throw an error for function as version", function (_ts as Object) as String
+    ' When
+    try
+      func = sub () : end sub
+      compareVersions(func, func)
+    catch error
+      result = error.message
+    end try
+    
+    ' Then
+    return expect(result).toBe(["Type Mismatch. Unable to cast " , "Function", " to ", "String", "."].join(Chr(34)))
+  end function)
+
+  itEach([
+    "6.3.",
+    "1.2.3a",
+    "1.2.-3a",
+  ], "should throw an error for invalid version format", function (_ts as Object, invalidInput as Dynamic) as String
+    ' When
+    try
+      compareVersions(invalidInput, invalidInput)
+    catch error
+      result = error.message
+    end try
+    
+    ' Then
+    return expect(result).toBe(["Invalid argument not valid semver (", invalidInput, " received)"].join(""))
+  end function)
+
   return ts
 end function

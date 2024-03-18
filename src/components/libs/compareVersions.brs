@@ -87,9 +87,9 @@ function compareVersions(v1 as String, v2 as String) as Integer
   prototype._validateAndParse = function (value as String) as Object
     match = m._severRegex.match(value)
 
-    if (match.count() > 0)
-      match.shift()
-    end if
+    if (match.count() = 0) then throw ["Invalid argument not valid semver (", value, " received)"].join("")
+
+    match.shift()
 
     jsMimicMatchOutput = []
     for i = 0 to 4
