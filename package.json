@@ -1,6 +1,6 @@
 {
   "name": "compare-versions-roku",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compare semver version strings in BrightScript",
   "keywords": [
     "brightscript",
