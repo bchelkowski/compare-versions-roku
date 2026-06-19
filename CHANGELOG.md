@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/bchelkowski/compare-versions-roku/compare/v1.0.1...v1.0.2) (2026-06-19)
+
+
+### Bug Fixes
+
+* add formatter and linter ([#1](https://github.com/bchelkowski/compare-versions-roku/issues/1)) ([80fb5dd](https://github.com/bchelkowski/compare-versions-roku/commit/80fb5dd70064934df79a6fa3b574ff3c86bf07ba))
+* broken release action ([#2](https://github.com/bchelkowski/compare-versions-roku/issues/2)) ([abca261](https://github.com/bchelkowski/compare-versions-roku/commit/abca26173fb188be3c82a91fa9a781a5c367fa70))
+
 ## [1.0.1](https://github.com/bchelkowski/compare-versions-roku/compare/v1.0.0...v1.0.1) (2024-03-18)
 
 
