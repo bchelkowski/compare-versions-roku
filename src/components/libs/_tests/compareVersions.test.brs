@@ -215,7 +215,7 @@ function TestSuite__compareVersions() as Object
     catch error
       result = error.message
     end try
-    
+
     ' Then
     return expect(result).toBe(["Type Mismatch. Unable to cast " , "Integer", " to ", "String", "."].join(Chr(34)))
   end function)
@@ -228,7 +228,7 @@ function TestSuite__compareVersions() as Object
     catch error
       result = error.message
     end try
-    
+
     ' Then
     return expect(result).toBe(["Type Mismatch. Unable to cast " , "roAssociativeArray", " to ", "String", "."].join(Chr(34)))
   end function)
@@ -241,7 +241,7 @@ function TestSuite__compareVersions() as Object
     catch error
       result = error.message
     end try
-    
+
     ' Then
     return expect(result).toBe(["Type Mismatch. Unable to cast " , "roArray", " to ", "String", "."].join(Chr(34)))
   end function)
@@ -254,7 +254,7 @@ function TestSuite__compareVersions() as Object
     catch error
       result = error.message
     end try
-    
+
     ' Then
     return expect(result).toBe(["Type Mismatch. Unable to cast " , "Function", " to ", "String", "."].join(Chr(34)))
   end function)
@@ -270,7 +270,7 @@ function TestSuite__compareVersions() as Object
     catch error
       result = error.message
     end try
-    
+
     ' Then
     return expect(result).toBe(["Invalid argument not valid semver (", invalidInput, " received)"].join(""))
   end function)

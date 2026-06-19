@@ -1,4 +1,3 @@
-' @import /components/getProperty.brs from @dazn/kopytko-utils
 ' @import /components/getType.brs from @dazn/kopytko-utils
 ' @import /components/ternary.brs from @dazn/kopytko-utils
 
@@ -16,29 +15,29 @@ function compareVersions(v1 as String, v2 as String) as Integer
   _compareVersions = function (context as Object, v1 as String, v2 as String) as Integer
     n1 = context._validateAndParse(v1)
     n2 = context._validateAndParse(v2)
-  
+
     p1 = n1.pop()
     if (p1 = Invalid) then p1 = ""
     p2 = n2.pop()
     if (p2 = Invalid) then p2 = ""
-  
+
     r = context._compareSegments(n1, n2)
-  
+
     if (r <> 0) then return r
-  
+
     if (p1 <> "" AND p2 <> "")
       return context._compareSegments(p1.split("."), p2.split("."))
     else if (p1 <> "" OR p2 <> "")
       return ternary(p1 <> "", -1, 1)
     end if
-  
+
     return 0
   end function
 
   prototype._compareSegments = function (a as Object, b as Object) as Integer
     max = a.count()
     if (max < b.count()) then max = b.count()
-    
+
     for i = 0 to max - 1
       aValue = a[i]
       if (aValue = Invalid) then aValue = "0"
@@ -46,10 +45,10 @@ function compareVersions(v1 as String, v2 as String) as Integer
       if (bValue = Invalid) then bValue = "0"
 
       r = m._compareStrings(aValue, bValue)
-  
+
       if (r <> 0) then return r
     end for
-  
+
     return 0
   end function
 
